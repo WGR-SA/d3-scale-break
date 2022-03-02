@@ -26,7 +26,10 @@ const pluginsConfig = targets => ([
         babelrc: false,
         presets: [['@babel/env', { modules: false, targets }]],
         // solve a problem with spread operator transpilation https://github.com/rollup/rollup/issues/281
-        plugins: ['@babel/plugin-proposal-object-rest-spread'],
+        plugins: [
+          '@babel/plugin-proposal-object-rest-spread',
+          '@babel/plugin-transform-arrow-functions'
+        ],
         comments: false,
     }),
     resolve(),
